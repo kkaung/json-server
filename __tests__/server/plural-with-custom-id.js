@@ -1,4 +1,3 @@
-const assert = require('assert')
 const _ = require('lodash')
 const request = require('supertest')
 const jsonServer = require('../../src/server')
@@ -46,10 +45,7 @@ describe('Server with --id Id', () => {
     test('should respond with the resource and its embedded entities', () => {
       const post = {
         ...db.posts[0],
-        comments: [
-          db.comments[0],
-          db.comments[1],
-        ]
+        comments: [db.comments[0], db.comments[1]]
       }
 
       return request(server)
