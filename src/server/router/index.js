@@ -37,7 +37,7 @@ module.exports = (db, opts) => {
   db._.mixin(mixins)
 
   // Explicitly set default id value for _embed queries
-  db._.id = 'id';
+  db._.id = 'id'
 
   // Expose database
   router.db = db
