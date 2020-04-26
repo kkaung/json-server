@@ -19,7 +19,8 @@ module.exports = (db, name, opts) => {
           const query = {}
           const singularResource = pluralize.singular(name)
           query[`${singularResource}${opts.foreignKeySuffix}`] =
-            resource.id || resource[db._.id]
+            resource[db._.id]
+
           resource[externalResource] = db
             .get(externalResource)
             .filter(query)
